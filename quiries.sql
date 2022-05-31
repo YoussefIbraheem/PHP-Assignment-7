@@ -1,6 +1,6 @@
 -- QUESTION 1
 
-SELECT orderNumber , SUM(priceEach) AS total FROM `orderdetails` GROUP BY orderNumber; 
+SELECT orderNumber , SUM( quantityOrdered * priceEach) AS total FROM `orderdetails` GROUP BY orderNumber; 
 
 -- QUESTION 2
 

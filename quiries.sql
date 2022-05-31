@@ -16,4 +16,4 @@ SELECT * FROM `employees` JOIN offices ON employees.officeCode = offices.officeC
 
 -- QUESTION 5
 
-SELECT customers.customerName , SUM(orderdetails.priceEach) FROM `customers` JOIN orders ON customers.customerNumber = orders.customerNumber JOIN orderdetails ON orders.orderNumber = orderdetails.orderNumber GROUP BY customers.customerName; 
+SELECT customers.customerName , SUM(orderdetails.priceEach * orderdetails.quantityOrdered) AS TotalPaid FROM `customers` JOIN orders ON customers.customerNumber = orders.customerNumber JOIN orderdetails ON orders.orderNumber = orderdetails.orderNumber GROUP BY customers.customerName; 
